@@ -17,46 +17,15 @@ const slideMask4 = slideMasks[3];
 const num = 3;
 
 const doSomething = (progress) => {
-  //------------------------------------------------------------------
-  //---------------- SLIDE 1
+  slides.forEach((slide, i) => {
+    slides[i].style.transform = `translate(0,-${
+      progress * slideWrapper.offsetHeight * num
+    }px)`;
 
-  slide1.style.transform = `translate(0,-${
-    progress * slideWrapper.offsetHeight * num
-  }px)`;
-
-  slideMask1.style.transform = `translate(0, calc(-${
-    slideWrapper.offsetHeight * 0
-  }px + ${progress * slideWrapper.offsetHeight * num}px))`;
-
-  //------------------------------------------------------------------
-  //---------------- SLIDE 2
-  slide2.style.transform = `translate(0,-${
-    progress * slideWrapper.offsetHeight * num
-  }px)`;
-
-  slideMask2.style.transform = `translate(0, calc(-${
-    slideWrapper.offsetHeight * 1
-  }px + ${progress * slideWrapper.offsetHeight * num}px))`;
-
-  //------------------------------------------------------------------
-  //---------------- SLIDE 3
-  slide3.style.transform = `translate(0,-${
-    progress * slideWrapper.offsetHeight * num
-  }px)`;
-
-  slideMask3.style.transform = `translate(0,calc(-${
-    slideWrapper.offsetHeight * 2
-  }px + ${progress * slideWrapper.offsetHeight * num}px))`;
-
-  //------------------------------------------------------------------
-  //---------------- SLIDE 4
-  slide4.style.transform = `translate(0,-${
-    progress * slideWrapper.offsetHeight * num
-  }px)`;
-
-  slideMask4.style.transform = `translate(0,calc(-${
-    slideWrapper.offsetHeight * 3
-  }px + ${progress * slideWrapper.offsetHeight * num}px))`;
+    slideMasks[i].style.transform = `translate(0, calc(-${
+      slideWrapper.offsetHeight * i
+    }px + ${progress * slideWrapper.offsetHeight * num}px))`;
+  });
 };
 
 const lenis = new Lenis({
