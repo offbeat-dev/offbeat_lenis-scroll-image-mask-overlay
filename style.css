@@ -3,6 +3,7 @@
 *:before {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 body {
   margin: 0;
@@ -11,23 +12,21 @@ body {
 
 .container {
   display: flex;
-  position: relative;
   transition-property: transform;
   width: 100%;
   z-index: 1;
-  height: 200vh;
+  height: 800vh;
 }
 
 .slides-wrapper {
   display: flex;
   transition-property: transform;
   width: 100%;
-  height: 100vh;
   z-index: 1;
   flex-direction: column;
-  overflow: hidden;
   position: sticky;
   top: 0;
+  height: 100vh;
 }
 
 .slide {
@@ -53,4 +52,10 @@ img {
   top: 0;
   width: 100%;
   z-index: 0;
+}
+
+.slide:nth-child(1),
+.slide:nth-child(2),
+.slide:nth-child(3) {
+  /* opacity: 0; */
 }
